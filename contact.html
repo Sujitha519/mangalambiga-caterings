@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Sri Mangalambiga Catering Services - Reserve your event or send an inquiry">
+    <title>Contact | Sri Mangalambiga Catering Services</title>
+
+    <!-- Google Fonts Matching Brand Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           BRAND PALETTE & TYPOGRAPHY SYSTEM
+        ====================================================== */
+        :root {
+            --deep-maroon: #8C1428;
+            --burnt-orange: #E66A0A;
+            --leaf-green: #476B35;
+            --warm-ivory: #FFF7E8;
+            --pure-white: #FFFFFF;
+            --text-dark: #2A1713;
+            --font-heading: 'Cinzel', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+            margin: 0;
+            padding: 0;
+            background-color: var(--warm-ivory);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+        }
+
+        /* =====================================================
+           NAVBAR FIXED COLORING (DARK BG + IVORY TEXT + GOLD HOVER)
+        ====================================================== */
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #120305; /* Matching the dark header background in your screenshot */
+            border-bottom: 2px solid rgba(230, 106, 10, 0.2);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--warm-ivory);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.68rem;
+            color: var(--burnt-orange);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* DEFAULT LINK COLOR: IVORY */
+        .nav-links li a {
+            color: var(--warm-ivory) !important;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        /* HOVER & ACTIVE LINK COLOR: GOLD / BURNT ORANGE */
+        
+
+       
+
+        .nav-button {
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 11px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.25);
+        }
+
+        .nav-button:hover {
+            background-color: #c95802;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--warm-ivory);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1024px) {
+            .navbar > .nav-button {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120305;
+                border-bottom: 3px solid var(--burnt-orange);
+                padding: 25px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+
+            nav.mobile-active {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+
+            .nav-links li a {
+                color: var(--warm-ivory) !important;
+                font-size: 1rem;
+            }
+
+            .nav-links li a:hover,
+            .nav-links li a.active {
+                color: var(--burnt-orange) !important;
+            }
+        }
+
+        /* =====================================================
+           PAGE HERO BANNER
+        ====================================================== */
+        .page-hero {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 60px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero-label {
+            color: var(--burnt-orange);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            color: var(--warm-ivory);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin: 5px 0 15px 0;
+            font-weight: 700;
+        }
+
+        .page-hero h1 span {
+            color: var(--burnt-orange);
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--burnt-orange);
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+        }
+
+        .page-hero p {
+            color: var(--warm-ivory);
+            opacity: 0.95;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* =====================================================
+           GENERAL SECTIONS & TYPOGRAPHY
+        ====================================================== */
+        .premium-section {
+            padding: 70px 5%;
+        }
+
+        .eyebrow {
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .premium-heading {
+            margin-bottom: 45px;
+        }
+
+        .premium-heading.center {
+            text-align: center;
+        }
+
+        .premium-heading h2 {
+            color: var(--deep-maroon);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .premium-heading h2 span {
+            color: var(--burnt-orange);
+        }
+
+        .premium-heading p {
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .gold-button {
+            display: inline-block;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 13px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.2);
+        }
+
+        .gold-button:hover {
+            background-color: #c95802;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           CONTACT & FORM STYLING
+        ====================================================== */
+        .contact-premium {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background-color: var(--pure-white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            border-top: 4px solid var(--deep-maroon);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+        }
+
+        .contact-info h2 {
+            color: var(--deep-maroon);
+            font-size: 2rem;
+            margin: 5px 0 15px 0;
+        }
+
+        .contact-info p {
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .contact-info-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(140, 20, 40, 0.15);
+        }
+
+        .contact-info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-info-item strong {
+            display: block;
+            color: var(--burnt-orange);
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            margin-bottom: 2px;
+        }
+
+        .contact-info-item span {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .contact-premium-form {
+            background-color: var(--pure-white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            border-top: 4px solid var(--burnt-orange);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+        }
+
+        .contact-premium-form h2 {
+            color: var(--deep-maroon);
+            font-size: 2rem;
+            margin: 5px 0 25px 0;
+        }
+
+        .contact-premium-form h2 span {
+            color: var(--burnt-orange);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--deep-maroon);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(140, 20, 40, 0.2);
+            border-radius: 4px;
+            background-color: var(--warm-ivory);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--burnt-orange);
+            box-shadow: 0 0 0 3px rgba(230, 106, 10, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .premium-submit {
+            width: 100%;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.25);
+        }
+
+        .premium-submit:hover {
+            background-color: #c95802;
+        }
+
+        @media (max-width: 900px) {
+            .contact-premium {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        /* =====================================================
+           MODAL STYLES
+        ====================================================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(42, 23, 19, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-container {
+            background: var(--pure-white);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            padding: 35px;
+            position: relative;
+            border-top: 4px solid var(--burnt-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--deep-maroon);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        /* =====================================================
+           CTA SECTION
+        ====================================================== */
+        .premium-cta {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            text-align: center;
+            padding: 60px 5%;
+            margin-top: 40px;
+        }
+
+        .premium-cta h2 {
+            color: var(--warm-ivory);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin: 0 0 15px 0;
+        }
+
+        .premium-cta h2 em {
+            font-style: normal;
+            color: var(--burnt-orange);
+        }
+
+        .premium-cta p {
+            color: var(--warm-ivory);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.05rem;
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+        .premium-footer {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 60px 5% 25px;
+            border-top: 4px solid var(--burnt-orange);
+        }
+
+        .premium-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .premium-footer h3 {
+            color: var(--warm-ivory);
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            position: relative;
+        }
+
+        .premium-footer h3::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: var(--burnt-orange);
+            margin-top: 6px;
+        }
+
+        .premium-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .premium-footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .premium-footer a {
+            color: var(--warm-ivory);
+            opacity: 0.9;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .premium-footer a:hover {
+            color: var(--burnt-orange);
+            opacity: 1;
+        }
+
+        .premium-footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 247, 232, 0.2);
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        /* =====================================================
+   UNIFIED NAVBAR LINK STYLES
+====================================================== */
+
+/* 1. DEFAULT STATE: Ivory for all inactive links */
+.nav-links li a {
+    color: #FFF7E8 !important; /* Warm Ivory */
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* 2. HOVER STATE: Bright Gold on hover for all inactive links */
+.nav-links li a:hover {
+    color: #FFC107 !important; /* Gold */
+}
+
+/* 3. ACTIVE STATE: Orange highlight ONLY for the current page link */
+
+
+
+
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="mcs-logo.jpeg" alt="Sri Mangalambiga">
+            <div class="logo-text">
+                <strong>SRI MANGALAMBIGA</strong>
+                <span>CATERING SERVICES</span>
+            </div>
+        </a>
+
+        <!-- HAMBURGER BUTTON -->
+        <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVIGATION MENU -->
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-button">BOOK AN EVENT</a>
+    </header>
+
+    <!-- CONTACT HERO -->
+    <section class="page-hero">
+        <div>
+            <span class="page-hero-label">BOOK YOUR DATES</span>
+            <h1>Reserve <span>Your Event</span></h1>
+            <div class="gold-line"></div>
+            <p>
+                Ready to host a memorable feast? Reserve your slot directly using our booking form below or request a custom enquiry.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT & BOOKING SECTION -->
+    <section class="premium-section">
+        <div class="contact-premium">
+
+            <!-- CONTACT INFORMATION -->
+            <div class="contact-info">
+                <span class="eyebrow">CONTACT US</span>
+                <h2>Let's Plan <br>Your <span>Celebration</span></h2>
+                <p>
+                    Whether you're planning a wedding, family function, corporate gathering or special celebration, we'd love to hear from you.
+                </p>
+
+                <div class="contact-info-item">
+                    <strong>Location</strong>
+                    <span>No. 24, 5th Main Road, Nanganallur, Chennai &ndash; 600 061</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Catering Services</strong>
+                    <span>100% Pure Vegetarian Feasts &amp; Dining</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Enquiries &amp; Bookings</strong>
+                    <span><a href="tel:+919841015297" style="color: inherit; text-decoration: none;">+91 98410 15297</a></span><br>
+                    <span><a href="mailto:mangalambigacatering@gmail.com" style="color: inherit; text-decoration: none;">mangalambigacatering@gmail.com</a></span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Availability</strong>
+                    <span>Contact us to discuss date availability &amp; custom menus</span>
+                </div>
+            </div>
+
+            <!-- BOOKING REGISTRATION FORM -->
+            <div class="contact-premium-form">
+                <span class="eyebrow">RESERVATION FORM</span>
+                <h2>Book <span>Your Event</span></h2>
+
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookName">Full Name *</label>
+                            <input type="text" id="bookName" name="name" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookPhone">Phone Number *</label>
+                            <input type="tel" id="bookPhone" name="phone" placeholder="Your phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookEmail">Email Address</label>
+                            <input type="email" id="bookEmail" name="email" placeholder="Your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookEventType">Event Type *</label>
+                            <select id="bookEventType" name="eventType" required>
+                                <option value="">Select event type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="reception">Reception</option>
+                                <option value="birthday">Birthday / Family Function</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="religious">Religious / Traditional Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookDate">Event Date *</label>
+                            <input type="date" id="bookDate" name="eventDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookSlot">Meal Slot *</label>
+                            <select id="bookSlot" name="slot" required>
+                                <option value="">Select slot</option>
+                                <option value="breakfast">Breakfast / Morning</option>
+                                <option value="lunch">Lunch / Afternoon</option>
+                                <option value="dinner">Dinner / Evening</option>
+                                <option value="full-day">Full Day Event</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookGuests">Guest Count *</label>
+                            <input type="number" id="bookGuests" name="guests" min="1" placeholder="Expected guests" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookLocation">Event Location / Venue *</label>
+                            <input type="text" id="bookLocation" name="location" placeholder="City or Hall Name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookNotes">Special Notes</label>
+                        <textarea id="bookNotes" name="notes" placeholder="Mention any specific menu preference or setup details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="premium-submit">CONFIRM BOOKING REQUEST</button>
+                </form>
+
+                <div id="bookingMessage" style="display:none; margin-top:20px; padding:15px; background:var(--warm-ivory); border-left:4px solid var(--burnt-orange); color:var(--deep-maroon); font-size:14px; font-weight:600; line-height:1.6; border-radius:4px;">
+                    Thank you! Your event registration request has been submitted. We will contact you shortly to confirm availability.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUICK CONTACT CTA -->
+    <section class="premium-section" style="padding-top:20px;">
+        <div class="premium-heading center">
+            <span class="eyebrow">LOOKING FOR SOMETHING SPECIAL?</span>
+            <h2>Explore Our <span>Menu</span></h2>
+            <p>
+                Discover our traditional vegetarian food and catering options before planning your event.
+            </p>
+            <a href="menu.html" class="gold-button">VIEW MENU</a>
+        </div>
+    </section>
+
+    <!-- CTA (Triggers Popup Modal) -->
+    <section class="premium-cta">
+        <h2>Your Celebration <em>Starts Here</em></h2>
+        <p>
+            Have general questions or custom requirements? Send us a direct inquiry.
+        </p>
+        <button onclick="openEnquiryModal()" class="gold-button" style="border:none; cursor:pointer;">
+            SEND AN ENQUIRY
+        </button>
+    </section>
+
+    <!-- ENQUIRY POPUP MODAL -->
+    <div id="enquiryModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeEnquiryModal()">&times;</button>
+            
+            <span class="eyebrow">EVENT ENQUIRY</span>
+            <h2 style="color: var(--deep-maroon); margin: 5px 0 20px 0;">Tell Us About <span style="color: var(--burnt-orange);">Your Event</span></h2>
+
+            <form id="enquiryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">Select event type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="reception">Reception</option>
+                            <option value="birthday">Birthday / Family Function</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="religious">Religious / Traditional Event</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="eventDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number Of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" placeholder="Approximate guests">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Required</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service</option>
+                        <option value="full-catering">Full Catering</option>
+                        <option value="buffet">Buffet Catering</option>
+                        <option value="traditional-meals">Traditional Meals</option>
+                        <option value="breakfast">Breakfast / Tiffin</option>
+                        <option value="sweets">Sweets</option>
+                        <option value="custom">Custom Requirement</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell Us More</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your event, food requirements or anything else you'd like us to know..."></textarea>
+                </div>
+
+                <button type="submit" class="premium-submit">SEND ENQUIRY</button>
+            </form>
+
+            <div id="formMessage" style="display:none; margin-top:20px; padding:15px; background:var(--warm-ivory); border-left:4px solid var(--burnt-orange); color:var(--deep-maroon); font-size:14px; font-weight:600; line-height:1.6; border-radius:4px;">
+                Thank you for your enquiry! We'll get back to you soon.
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer">
+        <div class="premium-footer-grid">
+            <div>
+                <h3>Sri Mangalambiga</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">Traditional Tamil flavours, generous hospitality and memorable vegetarian feasts for every celebration.</p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Discover</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">
+                    No. 24, 5th Main Road,<br>
+                    Nanganallur, Chennai &ndash; 600 061
+                </p>
+                <p style="font-size:0.95rem;">
+                    <a href="tel:+919841015297">98410 15297</a><br>
+                    <a href="mailto:mangalambigacatering@gmail.com">mangalambigacatering@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="premium-footer-bottom">
+            &copy; 2026 Sri Mangalambiga Catering Services. All Rights Reserved. &bull; ISO 9001:2015 CERTIFIED
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Booking Form Logic
+        const bookingForm = document.getElementById("bookingForm");
+        const bookingMessage = document.getElementById("bookingMessage");
+
+        bookingForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            bookingMessage.style.display = "block";
+            bookingForm.reset();
+        });
+
+        // Modal Popup Logic
+        const enquiryModal = document.getElementById("enquiryModal");
+        const enquiryForm = document.getElementById("enquiryForm");
+        const formMessage = document.getElementById("formMessage");
+
+        function openEnquiryModal() {
+            enquiryModal.style.display = "flex";
+        }
+
+        function closeEnquiryModal() {
+            enquiryModal.style.display = "none";
+            formMessage.style.display = "none";
+        }
+
+        // Close Modal on outside click
+        window.addEventListener("click", function(event) {
+            if (event.target === enquiryModal) {
+                closeEnquiryModal();
+            }
+        });
+
+        enquiryForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            formMessage.style.display = "block";
+            formMessage.innerHTML = "Thank you for your enquiry! Your details have been received. We'll get back to you soon.";
+            enquiryForm.reset();
+        });
+
+        // Mobile Nav Toggle
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-menu');
+            const btn = document.getElementById('menuBtn');
+            nav.classList.toggle('mobile-active');
+            if (btn) btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

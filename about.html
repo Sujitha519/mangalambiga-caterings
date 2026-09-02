@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Sri Mangalambiga Catering Services - Authentic Tamil Vegetarian Catering">
+    <title>About | Sri Mangalambiga Catering Services</title>
+
+    <!-- Google Fonts Matching Brand Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           BRAND PALETTE & TYPOGRAPHY SYSTEM
+        ====================================================== */
+        :root {
+            --deep-maroon: #8C1428;
+            --burnt-orange: #E66A0A;
+            --leaf-green: #476B35;
+            --warm-ivory: #FFF7E8;
+            --pure-white: #FFFFFF;
+            --text-dark: #2A1713;
+            --font-heading: 'Cinzel', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+            margin: 0;
+            padding: 0;
+            background-color: var(--warm-ivory);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--warm-ivory);
+            border-bottom: 2px solid rgba(140, 20, 40, 0.12);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--deep-maroon);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.68rem;
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: var(--deep-maroon);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--burnt-orange);
+        }
+
+        .nav-button {
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 11px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.25);
+        }
+
+        .nav-button:hover {
+            background-color: #c95802;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--deep-maroon);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1024px) {
+            .navbar > .nav-button {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--warm-ivory);
+                border-bottom: 3px solid var(--deep-maroon);
+                padding: 25px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            nav.mobile-active {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+        }
+
+        /* =====================================================
+           PAGE HERO BANNER
+        ====================================================== */
+        .page-hero {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 60px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero-label {
+            color: var(--burnt-orange);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            color: var(--warm-ivory);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin: 5px 0 15px 0;
+            font-weight: 700;
+        }
+
+        .page-hero h1 span {
+            color: var(--burnt-orange);
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--burnt-orange);
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+        }
+
+        .page-hero p {
+            color: var(--warm-ivory);
+            opacity: 0.95;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* =====================================================
+           GENERAL SECTIONS & TYPOGRAPHY
+        ====================================================== */
+        .premium-section {
+            padding: 70px 5%;
+        }
+
+        .eyebrow {
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .premium-heading {
+            margin-bottom: 45px;
+        }
+
+        .premium-heading.center {
+            text-align: center;
+        }
+
+        .premium-heading h2 {
+            color: var(--deep-maroon);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .premium-heading h2 span {
+            color: var(--burnt-orange);
+        }
+
+        .premium-heading p {
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .gold-button {
+            display: inline-block;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 13px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.2);
+        }
+
+        .gold-button:hover {
+            background-color: #c95802;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           OUR STORY SECTION
+        ====================================================== */
+        .about-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid var(--deep-maroon);
+            box-shadow: 0 10px 20px rgba(140, 20, 40, 0.1);
+        }
+
+        .about-copy h2 {
+            color: var(--deep-maroon);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin: 5px 0 15px 0;
+            font-weight: 700;
+        }
+
+        .about-copy h2 em {
+            font-style: normal;
+            color: var(--burnt-orange);
+        }
+
+        .about-copy p {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 850px) {
+            .about-premium {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* =====================================================
+           STATS SECTION
+        ====================================================== */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-stat {
+            background-color: var(--pure-white);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            border-top: 4px solid var(--burnt-orange);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+        }
+
+        .about-stat strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--deep-maroon);
+            margin-bottom: 5px;
+        }
+
+        .about-stat span {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--leaf-green);
+            letter-spacing: 0.5px;
+        }
+
+        /* =====================================================
+           PHILOSOPHY CARDS
+        ====================================================== */
+        .why-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-premium-card {
+            background-color: var(--pure-white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--deep-maroon);
+        }
+
+        .why-icon {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--burnt-orange);
+            margin-bottom: 15px;
+        }
+
+        .why-premium-card h3 {
+            color: var(--deep-maroon);
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+        }
+
+        .why-premium-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* =====================================================
+           CTA SECTION
+        ====================================================== */
+        .premium-cta {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            text-align: center;
+            padding: 60px 5%;
+            margin-top: 40px;
+        }
+
+        .premium-cta h2 {
+            color: var(--warm-ivory);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin: 0 0 15px 0;
+        }
+
+        .premium-cta h2 em {
+            font-style: normal;
+            color: var(--burnt-orange);
+        }
+
+        .premium-cta p {
+            color: var(--warm-ivory);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.05rem;
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+        .premium-footer {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 60px 5% 25px;
+            border-top: 4px solid var(--burnt-orange);
+        }
+
+        .premium-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .premium-footer h3 {
+            color: var(--warm-ivory);
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            position: relative;
+        }
+
+        .premium-footer h3::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: var(--burnt-orange);
+            margin-top: 6px;
+        }
+
+        .premium-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .premium-footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .premium-footer a {
+            color: var(--warm-ivory);
+            opacity: 0.9;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .premium-footer a:hover {
+            color: var(--burnt-orange);
+            opacity: 1;
+        }
+
+        .premium-footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 247, 232, 0.2);
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="mcs-logo.jpeg" alt="Sri Mangalambiga">
+            <div class="logo-text">
+                <strong>SRI MANGALAMBIGA</strong>
+                <span>CATERING SERVICES</span>
+            </div>
+        </a>
+
+        <!-- HAMBURGER BUTTON -->
+        <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVIGATION MENU -->
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-button">BOOK AN EVENT</a>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="page-hero">
+        <div>
+            <span class="page-hero-label">SRI MANGALAMBIGA</span>
+            <h1>About <span>Mangalambiga</span></h1>
+            <div class="gold-line"></div>
+            <p>
+                Traditional Tamil flavours, thoughtful presentation
+                and warm hospitality — created for celebrations
+                that deserve to be remembered.
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="premium-section">
+        <div class="about-premium">
+            <!-- IMAGE -->
+            <div class="about-photo">
+                <img src="tamil-vegetarian-feast.jpg" alt="Traditional vegetarian feast">
+            </div>
+
+            <!-- CONTENT -->
+            <div class="about-copy">
+                <span class="eyebrow">OUR STORY</span>
+                <h2>Where <em>Tradition</em> Meets Taste</h2>
+                <div class="gold-line" style="margin: 0 0 20px 0;"></div>
+                <p>
+                    Sri Mangalambiga Catering Services is built
+                    around the love of traditional Indian food
+                    and the joy of bringing people together
+                    around a shared dining experience.
+                </p>
+                <p>
+                    From delicious South Indian favourites to
+                    traditional sweets and beautifully arranged
+                    meals, Mangalambiga celebrates the flavours
+                    and presentation that make Indian cuisine
+                    special.
+                </p>
+                <p>
+                    Our approach combines authentic food,
+                    thoughtful presentation and warm service
+                    to create memorable occasions for every
+                    celebration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="premium-section" style="padding-top:20px; background-color: var(--pure-white);">
+        <div class="about-stats">
+            <div class="about-stat">
+                <strong>100%</strong>
+                <span>Pure Vegetarian</span>
+            </div>
+
+            <div class="about-stat">
+                <strong>Fresh</strong>
+                <span>Quality Ingredients</span>
+            </div>
+
+            <div class="about-stat">
+                <strong>Warm</strong>
+                <span>Hospitality</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PHILOSOPHY -->
+    <section class="premium-section">
+        <div class="premium-heading center">
+            <span class="eyebrow">WHAT WE BELIEVE</span>
+            <h2>More Than <span>Just Food</span></h2>
+            <p>
+                Every celebration is different.
+                Our goal is to make every gathering
+                feel special through authentic flavours,
+                beautiful presentation and genuine
+                hospitality.
+            </p>
+        </div>
+
+        <div class="why-premium-grid">
+            <div class="why-premium-card">
+                <div class="why-icon">01</div>
+                <h3>Authentic Flavours</h3>
+                <p>
+                    We celebrate the richness of traditional
+                    Indian and Tamil cuisine with flavours
+                    inspired by timeless culinary traditions.
+                </p>
+            </div>
+
+            <div class="why-premium-card">
+                <div class="why-icon">02</div>
+                <h3>Quality &amp; Freshness</h3>
+                <p>
+                    Carefully prepared food and thoughtful
+                    presentation help us deliver a memorable
+                    dining experience for every occasion.
+                </p>
+            </div>
+
+            <div class="why-premium-card">
+                <div class="why-icon">03</div>
+                <h3>Warm Hospitality</h3>
+                <p>
+                    From the first serving to the final course,
+                    we believe genuine hospitality is what turns
+                    a meal into a celebration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="premium-cta">
+        <h2>Let's Make Your <em>Celebration</em> Special</h2>
+        <p>
+            Planning a wedding, corporate event,
+            family function or special celebration?
+            Let Sri Mangalambiga take care of the food
+            and hospitality.
+        </p>
+        <a href="contact.html" class="gold-button">BOOK AN EVENT</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer">
+        <div class="premium-footer-grid">
+            <!-- BRAND -->
+            <div>
+                <h3>Sri Mangalambiga</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">
+                    Traditional Tamil flavours,
+                    generous hospitality and memorable
+                    vegetarian feasts for every celebration.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- DISCOVER -->
+            <div>
+                <h3>Discover</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h3>Contact</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">
+                    No. 24, 5th Main Road,<br>
+                    Nanganallur, Chennai &ndash; 600 061
+                </p>
+                <p style="font-size:0.95rem;">
+                    <a href="tel:+919841015297">98410 15297</a><br>
+                    <a href="mailto:mangalambigacatering@gmail.com">mangalambigacatering@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="premium-footer-bottom">
+            &copy; 2026 Sri Mangalambiga Catering Services. All Rights Reserved. &bull; ISO 9001:2015 CERTIFIED
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-menu');
+            const btn = document.getElementById('menuBtn');
+            nav.classList.toggle('mobile-active');
+            btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

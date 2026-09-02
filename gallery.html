@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Sri Mangalambiga Catering Services</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+       /* MODERN BALANCED GALLERY GRID */
+.premium-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12-column grid for precise control */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 163, 67, 0.2);
+    background-color: #f9f6f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* DESKTOP LAYOUT (Balanced 12-Column Layout) */
+.gallery-item {
+    grid-column: span 4; /* Standard item takes 1/3 of row */
+    height: 280px;
+}
+
+.gallery-item.gallery-large {
+    grid-column: span 8; /* Large item takes 2/3 of row */
+    height: 580px;
+    grid-row: span 2;
+}
+
+.gallery-item.gallery-wide {
+    grid-column: span 8;
+    height: 280px;
+}
+
+.gallery-item.gallery-tall {
+    grid-column: span 4;
+    height: 580px;
+    grid-row: span 2;
+}
+
+/* IMAGE FIT AND HOVER */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* OVERLAY STYLING */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 5, 7, 0.85) 0%, rgba(26, 5, 7, 0.1) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #d4a343;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.gallery-overlay h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.gallery-item.gallery-large .gallery-overlay h3 {
+    font-size: 1.6rem;
+}
+
+/* TABLET LAYOUT (769px to 1024px) */
+@media (max-width: 1024px) {
+    .premium-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .gallery-item,
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-wide,
+    .gallery-item.gallery-tall {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        height: 260px !important;
+    }
+}
+
+/* MOBILE LAYOUT (up to 768px) */
+@media (max-width: 768px) {
+    .premium-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .gallery-item,
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-wide,
+    .gallery-item.gallery-tall {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        height: 240px !important;
+    }
+}
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="mcs-logo.jpeg" alt="Sri Mangalambiga">
+            <div class="logo-text">
+                <strong>SRI MANGALAMBIGA</strong>
+                <span>CATERING SERVICES</span>
+            </div>
+        </a>
+
+        <!-- HAMBURGER BUTTON -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVIGATION MENU -->
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-button">BOOK AN EVENT</a>
+    </header>
+
+    <!-- GALLERY HERO -->
+    <section class="page-hero">
+        <div>
+            <span class="page-hero-label">A GLIMPSE OF MANGALAMBIGA</span>
+            <h1>Our <span>Gallery</span></h1>
+            <div class="gold-line"></div>
+            <p>
+                A visual journey through our food, celebrations, catering and traditional South Indian dining experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY INTRO & GRID -->
+    <section class="premium-section">
+        <div class="premium-heading center">
+            <span class="eyebrow">FOOD • SERVICE • CELEBRATION</span>
+            <h2>Taste The <span>Tradition</span></h2>
+            <p>
+                From beautifully arranged banana-leaf meals to traditional sweets and catering service, every image tells a part of the Mangalambiga experience.
+            </p>
+        </div>
+
+        <!-- GALLERY GRID -->
+        <div class="premium-gallery-grid">
+
+            <!-- LARGE FEATURED IMAGE -->
+            <div class="gallery-item gallery-large">
+                <img src="south feast.png" alt="Traditional Tamil vegetarian feast">
+                <div class="gallery-overlay">
+                    <span>TRADITIONAL CUISINE</span>
+                    <h3>The Banana Leaf Feast</h3>
+                </div>
+            </div>
+
+            <!-- BREAKFAST -->
+            <div class="gallery-item">
+                <img src="traditional bf.jpeg" alt="South Indian breakfast">
+                <div class="gallery-overlay">
+                    <span>MORNING FAVOURITES</span>
+                    <h3>Traditional Breakfast</h3>
+                </div>
+            </div>
+
+            <!-- BUFFET -->
+            <div class="gallery-item">
+                <img src="gallery-buffet.jpeg" alt="Vegetarian catering buffet">
+                <div class="gallery-overlay">
+                    <span>CATERING</span>
+                    <h3>Celebration Buffet</h3>
+                </div>
+            </div>
+
+            <!-- SERVICE (TALL CARD) -->
+            <div class="gallery-item gallery-tall">
+                <img src="graceful cs.jpeg" alt="Catering service">
+                <div class="gallery-overlay">
+                    <span>HOSPITALITY</span>
+                    <h3>Served With Care</h3>
+                </div>
+            </div>
+
+            <!-- SWEETS -->
+            <div class="gallery-item">
+                <img src="traditional sweets.jpg" alt="Traditional Indian sweets">
+                <div class="gallery-overlay">
+                    <span>SWEET TRADITIONS</span>
+                    <h3>A Sweet Finish</h3>
+                </div>
+            </div>
+
+            <!-- SECOND FEAST IMAGE -->
+            <div class="gallery-item">
+                <img src="tamil-vegetarian-feast.jpg" alt="South Indian vegetarian food">
+                <div class="gallery-overlay">
+                    <span>PURE VEGETARIAN</span>
+                    <h3>Authentic Flavours</h3>
+                </div>
+            </div>
+
+            <!-- SECOND BUFFET (WIDE CARD) -->
+            <div class="gallery-item gallery-wide">
+                <img src="grand ocassion.jpg" alt="Traditional vegetarian buffet">
+                <div class="gallery-overlay">
+                    <span>GRAND OCCASIONS</span>
+                    <h3>Made For Celebrations</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY QUOTE -->
+    <section class="gallery-quote">
+        <div>
+            <span class="eyebrow">OUR PHILOSOPHY</span>
+            <h2>Good Food. <em>Good People.</em> Great Memories.</h2>
+            <p>
+                Every gathering deserves food that brings people together. That's what we strive to create at Sri Mangalambiga.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="premium-cta">
+        <h2>Create Your Own <em>Beautiful Moment</em></h2>
+        <p>
+            Planning a wedding, family function, corporate gathering or special celebration? Let us be part of your occasion.
+        </p>
+        <a href="contact.html" class="gold-button">BOOK AN EVENT</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer">
+        <div class="premium-footer-grid">
+            <div>
+                <h3>Sri Mangalambiga</h3>
+                <p>Traditional Tamil flavours, generous hospitality and memorable vegetarian feasts for every celebration.</p>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Discover</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Nanganallur, Chennai</p>
+                <p>Call for Catering</p>
+            </div>
+        </div>
+
+        <div class="premium-footer-bottom">
+            © 2026 Sri Mangalambiga Catering Services. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('mobile-active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sri Mangalambiga Catering Services - Authentic Tamil Vegetarian Catering in Chennai">
+    <title>Sri Mangalambiga Catering Services</title>
+    
+    <!-- Google Fonts Matching Brand Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* =====================================================
+           BRAND PALETTE & TYPOGRAPHY SYSTEM
+        ====================================================== */
+        :root {
+            --deep-maroon: #8C1428;
+            --burnt-orange: #E66A0A;
+            --leaf-green: #476B35;
+            --warm-ivory: #FFF7E8;
+            --pure-white: #FFFFFF;
+            --text-dark: #2A1713;
+            --font-heading: 'Cinzel', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+            margin: 0;
+            padding: 0;
+            background-color: var(--warm-ivory);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--warm-ivory);
+            border-bottom: 2px solid rgba(140, 20, 40, 0.12);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--deep-maroon);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.68rem;
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: var(--deep-maroon);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--burnt-orange);
+        }
+
+        .nav-button {
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 11px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(230, 106, 10, 0.25);
+        }
+
+        .nav-button:hover {
+            background-color: #c95802;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--deep-maroon);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 1024px) {
+            .navbar > .nav-button {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--warm-ivory);
+                border-bottom: 3px solid var(--deep-maroon);
+                padding: 25px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            nav.mobile-active {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+        }
+
+        /* =====================================================
+           HERO SECTION (DARK MAROON ACCENT BANNER)
+        ====================================================== */
+        .hero {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 70px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-subtitle {
+            color: var(--warm-ivory);
+            background-color: var(--leaf-green);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: var(--warm-ivory);
+            margin: 5px 0 10px 0;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: var(--burnt-orange);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            color: var(--warm-ivory);
+            opacity: 0.95;
+            max-width: 500px;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn:hover {
+            background-color: #c95802;
+            transform: translateY(-2px);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .arch-frame {
+            width: 300px;
+            height: 380px;
+            border-top-left-radius: 150px;
+            border-top-right-radius: 150px;
+            overflow: hidden;
+            border: 4px solid var(--burnt-orange);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-badge {
+            background: var(--leaf-green);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            border: 2px solid var(--warm-ivory);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-badge span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge small {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-description {
+                margin: 0 auto 30px auto;
+            }
+        }
+
+        /* =====================================================
+           GENERAL SECTIONS & TYPOGRAPHY
+        ====================================================== */
+        .premium-section, .home-intro {
+            padding: 70px 5%;
+        }
+
+        .eyebrow, .intro-tagline {
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .premium-heading {
+            margin-bottom: 45px;
+        }
+
+        .premium-heading.center {
+            text-align: center;
+        }
+
+        .premium-heading h2, .home-intro-content h2 {
+            color: var(--deep-maroon);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .premium-heading h2 span {
+            color: var(--burnt-orange);
+        }
+
+        .premium-heading p {
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .primary-btn, .gold-button {
+            display: inline-block;
+            background-color: var(--deep-maroon);
+            color: var(--pure-white);
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(140, 20, 40, 0.15);
+        }
+
+        .primary-btn:hover, .gold-button:hover {
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+        }
+
+        /* =====================================================
+           HOME INTRO / ABOUT SECTION
+        ====================================================== */
+        .home-intro-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .home-intro-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid var(--deep-maroon);
+            box-shadow: 0 10px 20px rgba(140, 20, 40, 0.1);
+        }
+
+        /* =====================================================
+           SERVICES GRID
+        ====================================================== */
+        .services-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-premium-card {
+            background-color: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(140, 20, 40, 0.15);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease;
+        }
+
+        .service-premium-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-premium-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-premium-content {
+            padding: 20px;
+        }
+
+        .service-premium-content small {
+            color: var(--leaf-green);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+        }
+
+        .service-premium-content h2 {
+            color: var(--deep-maroon);
+            font-size: 1.4rem;
+            margin: 5px 0 10px 0;
+        }
+
+        .service-premium-content p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* =====================================================
+           MENU GRID
+        ====================================================== */
+        .menu-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-premium-card {
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+        }
+
+        .menu-premium-image {
+            position: relative;
+            height: 220px;
+        }
+
+        .menu-premium-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-hover-label {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .menu-premium-info {
+            padding: 20px;
+        }
+
+        .menu-premium-info small {
+            color: var(--leaf-green);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .menu-premium-info h3 {
+            color: var(--deep-maroon);
+            font-size: 1.35rem;
+            margin: 5px 0 8px 0;
+        }
+
+        .menu-premium-info p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* =====================================================
+           GALLERY GRID
+        ====================================================== */
+        .premium-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--deep-maroon);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(140, 20, 40, 0.85), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: var(--warm-ivory);
+        }
+
+        .gallery-overlay span {
+            color: var(--burnt-orange);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--warm-ivory);
+        }
+
+        /* =====================================================
+           WHY US CARDS
+        ====================================================== */
+        .why-premium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-premium-card {
+            background-color: var(--pure-white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(140, 20, 40, 0.12);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--deep-maroon);
+        }
+
+        .why-icon {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--burnt-orange);
+            margin-bottom: 15px;
+        }
+
+        .why-premium-card h3 {
+            color: var(--deep-maroon);
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+        }
+
+        /* =====================================================
+           CONTACT FORM & INFO
+        ====================================================== */
+        .contact-premium {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--pure-white);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid var(--deep-maroon);
+            box-shadow: 0 10px 25px rgba(140, 20, 40, 0.08);
+        }
+
+        .contact-info-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-info-item strong {
+            display: block;
+            color: var(--deep-maroon);
+            font-size: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        .contact-info-item span {
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .contact-premium-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--deep-maroon);
+            margin-bottom: 4px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #d4c5b9;
+            border-radius: 4px;
+            background-color: var(--warm-ivory);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: 2px solid var(--burnt-orange);
+            border-color: transparent;
+        }
+
+        .premium-submit {
+            width: 100%;
+            background-color: var(--burnt-orange);
+            color: var(--pure-white);
+            border: none;
+            padding: 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .premium-submit:hover {
+            background-color: #c95802;
+        }
+
+        @media (max-width: 850px) {
+            .contact-premium {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+        .premium-footer {
+            background-color: var(--deep-maroon);
+            color: var(--warm-ivory);
+            padding: 60px 5% 25px;
+            border-top: 4px solid var(--burnt-orange);
+        }
+
+        .premium-footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .premium-footer h3 {
+            color: var(--warm-ivory);
+            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            position: relative;
+        }
+
+        .premium-footer h3::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: var(--burnt-orange);
+            margin-top: 6px;
+        }
+
+        .premium-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .premium-footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .premium-footer a {
+            color: var(--warm-ivory);
+            opacity: 0.9;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .premium-footer a:hover {
+            color: var(--burnt-orange);
+            opacity: 1;
+        }
+
+        .premium-footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 247, 232, 0.2);
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body class="home-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="mcs-logo.jpeg" alt="Sri Mangalambiga Logo">
+            <div class="logo-text">
+                <strong>SRI MANGALAMBIGA</strong>
+                <span>CATERING SERVICES</span>
+            </div>
+        </a>
+
+        <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-button">BOOK AN EVENT</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-subtitle">100% PURE VEGETARIAN</span>
+                <h1 class="hero-title">Pure Vegetarian.<br>Pure Tradition.</h1>
+                <p class="hero-tagline">AUTHENTIC SOUTH INDIAN CATERING FOR EVERY CELEBRATION</p>
+                <p class="hero-description">
+                    Traditional Tamil flavours, generous hospitality and a memorable 
+                    vegetarian feast for every celebration.
+                </p>
+                <a href="menu.html" class="hero-btn">EXPLORE OUR MENU</a>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="arch-frame">
+                    <img src="TN food.jpeg" alt="Traditional Tamil Feast" class="hero-img">
+                </div>
+                <div class="hero-badge">
+                    <span>100% PURE VEGETARIAN</span>
+                    <small>ISO 9001:2015 CERTIFIED</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME INTRO / ABOUT -->
+    <section class="home-intro" id="about">
+        <div class="home-intro-container">
+            <div class="home-intro-image">
+                <img src="stiffin.jpg" alt="Traditional Tamil vegetarian breakfast">
+            </div>
+
+            <div class="home-intro-content">
+                <span class="intro-tagline">OUR PROMISE</span>
+                <h2>Traditional taste, served with heart.</h2>
+                <p>
+                    At Sri Mangalambiga Catering Services, every menu is
+                    prepared with care, bringing authentic Tamil
+                    vegetarian flavours to your most meaningful occasions.
+                </p>
+                <p>
+                    From weddings and receptions to poojas, family
+                    functions and corporate events, we create memorable
+                    dining experiences with traditional taste and
+                    gracious service. We are proudly 100% vegetarian
+                    and ISO 9001:2015 certified.
+                </p>
+                <a href="about.html" class="primary-btn">MORE ABOUT US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="premium-section" id="services">
+        <div class="premium-heading center">
+            <span class="eyebrow">WHAT WE CATER</span>
+            <h2>
+                Catering for every
+                <span>special occasion.</span>
+            </h2>
+            <p>
+                From traditional wedding feasts to thoughtful family
+                functions, we create menus around your occasion.
+            </p>
+        </div>
+
+        <div class="services-premium-grid">
+            <div class="service-premium-card">
+                <img src="gallery-service.jpeg" alt="Wedding catering">
+                <div class="service-premium-content">
+                    <small>SPECIAL CELEBRATIONS</small>
+                    <h2>Weddings</h2>
+                    <p>Grand Tamil virundhu and beautifully coordinated wedding dining.</p>
+                </div>
+            </div>
+
+            <div class="service-premium-card">
+                <img src="Wedding Diary.jpg" alt="Reception catering service">
+                <div class="service-premium-content">
+                    <small>ELEGANT HOSPITALITY</small>
+                    <h2>Receptions</h2>
+                    <p>Elegant vegetarian food and generous hospitality for your guests.</p>
+                </div>
+            </div>
+
+            <div class="service-premium-card">
+                <img src="Poojas and functions.jpg" alt="Pooja and function catering">
+                <div class="service-premium-content">
+                    <small>TRADITIONAL OCCASIONS</small>
+                    <h2>Poojas &amp; Functions</h2>
+                    <p>Traditional menus for auspicious and family occasions.</p>
+                </div>
+            </div>
+
+            <div class="service-premium-card">
+                <img src="gallery-buffet.jpeg" alt="Buffet catering">
+                <div class="service-premium-content">
+                    <small>ANY TIME OF DAY</small>
+                    <h2>Buffets</h2>
+                    <p>Breakfast, lunch, dinner and customised buffet arrangements.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:45px;">
+            <a href="services.html" class="gold-button">VIEW ALL SERVICES</a>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section class="premium-section" id="menu" style="background:var(--pure-white);">
+        <div class="premium-heading center">
+            <span class="eyebrow">OUR MENU DETAILS</span>
+            <h2>
+                From Tamil tiffin to a
+                <span>grand buffet.</span>
+            </h2>
+            <p>
+                Menus can be tailored for breakfast, lunch, dinner,
+                marriage and buffet functions.
+            </p>
+        </div>
+
+        <div class="menu-premium-grid">
+            <div class="menu-premium-card">
+                <div class="menu-premium-image">
+                    <img src="new bf.png" alt="Tamil breakfast and tiffin">
+                    <div class="menu-hover-label">View Favourite</div>
+                </div>
+                <div class="menu-premium-info">
+                    <small>MORNING FAVOURITES</small>
+                    <h3>Breakfast &amp; Tiffin</h3>
+                    <p>Idly &middot; Medu Vada &middot; Ven Pongal &middot; Dosa &middot; Poori &middot; Upma</p>
+                </div>
+            </div>
+
+            <div class="menu-premium-card">
+                <div class="menu-premium-image">
+                    <img src="tamil-vegetarian-feast.jpg" alt="Traditional Tamil meal">
+                    <div class="menu-hover-label">Traditional Taste</div>
+                </div>
+                <div class="menu-premium-info">
+                    <small>BANANA LEAF FEAST</small>
+                    <h3>Traditional Tamil Meal</h3>
+                    <p>Rice &middot; Sambar &middot; Rasam &middot; Mor Kuzhambu &middot; Poriyal &middot; Kootu</p>
+                </div>
+            </div>
+
+            <div class="menu-premium-card">
+                <div class="menu-premium-image">
+                    <img src="payasam.jpg" alt="Sweets and payasam">
+                    <div class="menu-hover-label">A Sweet Finish</div>
+                </div>
+                <div class="menu-premium-info">
+                    <small>FESTIVE FAVOURITES</small>
+                    <h3>Sweets &amp; Payasam</h3>
+                    <p>Kesari &middot; Poli &middot; Kaju Katli &middot; Laddu &middot; Gulab Jamun &middot; Payasam</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:45px;">
+            <a href="menu.html" class="gold-button">VIEW FULL MENU</a>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="premium-section" id="gallery">
+        <div class="premium-heading center">
+            <span class="eyebrow">FROM OUR KITCHEN</span>
+            <h2>
+                Celebrations served
+                <span>beautifully.</span>
+            </h2>
+            <p>A glimpse of our food, service and traditional vegetarian celebrations.</p>
+        </div>
+
+        <div class="premium-gallery-grid">
+            <div class="gallery-item">
+                <img src="graceful cs.jpeg" alt="Sri Mangalambiga catering service">
+                <div class="gallery-overlay">
+                    <span>OUR SERVICE</span>
+                    <h3>Graceful Catering</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="vegetarian buffet 2.jpeg" alt="Vegetarian buffet service">
+                <div class="gallery-overlay">
+                    <span>BUFFET</span>
+                    <h3>Grand Vegetarian Buffet</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="traditional bf.jpeg" alt="Tamil vegetarian breakfast">
+                <div class="gallery-overlay">
+                    <span>BREAKFAST</span>
+                    <h3>Traditional Tiffin</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="tamil banana leaf feast.jpeg" alt="Tamil vegetarian feast">
+                <div class="gallery-overlay">
+                    <span>VIRUNDHU</span>
+                    <h3>Tamil Banana Leaf Feast</h3>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:45px;">
+            <a href="gallery.html" class="gold-button">VIEW FULL GALLERY</a>
+        </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section class="premium-section" id="why-us" style="background:var(--pure-white);">
+        <div class="premium-heading center">
+            <span class="eyebrow">WHY FAMILIES CHOOSE US</span>
+            <h2>
+                Hospitality that feels
+                <span>like home.</span>
+            </h2>
+            <p>
+                We take care of the food with the attention your
+                celebration deserves, so you can focus on your guests.
+            </p>
+        </div>
+
+        <div class="why-premium-grid">
+            <div class="why-premium-card">
+                <div class="why-icon">01</div>
+                <h3>Pure Vegetarian Kitchen</h3>
+                <p>Every dish is prepared for a 100% vegetarian dining experience.</p>
+            </div>
+
+            <div class="why-premium-card">
+                <div class="why-icon">02</div>
+                <h3>Authentic Tamil Taste</h3>
+                <p>Time-honoured recipes and familiar flavours for every generation.</p>
+            </div>
+
+            <div class="why-premium-card">
+                <div class="why-icon">03</div>
+                <h3>Certified Quality</h3>
+                <p>ISO 9001:2015 certified quality and professional catering service.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:45px;">
+            <a href="why-us.html" class="gold-button">WHY CHOOSE US</a>
+        </div>
+    </section>
+
+    <!-- CONTACT / ENQUIRY SECTION -->
+    <section class="premium-section" id="contact">
+        <div class="contact-premium">
+            <div class="contact-info">
+                <span class="eyebrow">LET'S PLAN YOUR FEAST</span>
+                <h2>Your celebration deserves an unforgettable table.</h2>
+                <p style="margin-bottom:25px;">
+                    Tell us about your upcoming event. Our team will
+                    get in touch with you to discuss the menu, guest
+                    count and catering requirements.
+                </p>
+
+                <div class="contact-info-item">
+                    <strong>Call Us</strong>
+                    <span><a href="tel:+919841015297" style="color:var(--deep-maroon); font-weight:600; text-decoration:none;">98410 15297</a></span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Alternate Number</strong>
+                    <span><a href="tel:+918667463419" style="color:var(--deep-maroon); font-weight:600; text-decoration:none;">86674 63419</a></span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Email</strong>
+                    <span><a href="mailto:mangalambigacatering@gmail.com" style="color:var(--deep-maroon); font-weight:600; text-decoration:none;">mangalambigacatering@gmail.com</a></span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Address</strong>
+                    <span>No. 24, 5th Main Road, Nanganallur, Chennai &ndash; 600 061</span>
+                </div>
+            </div>
+
+            <div class="contact-premium-form">
+                <span class="eyebrow">SEND AN ENQUIRY</span>
+                <h2 style="color:var(--deep-maroon); font-size:1.8rem; margin:0 0 20px 0;">Tell Us About Your Event</h2>
+
+                <form id="enquiryForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event">Event Type</label>
+                            <select id="event" name="event" required>
+                                <option value="">Select event</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Reception">Reception</option>
+                                <option value="Pooja / Function">Pooja / Function</option>
+                                <option value="Birthday">Birthday</option>
+                                <option value="Corporate Event">Corporate Event</option>
+                                <option value="Buffet">Buffet</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" placeholder="Eg. 100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Event Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Event Time</label>
+                            <input type="time" id="time" name="time">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Requirements</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Tell us about your catering requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="premium-submit">
+                        SEND ENQUIRY VIA WHATSAPP &rarr;
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer">
+        <div class="premium-footer-grid">
+            <div>
+                <h3>Sri Mangalambiga</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">Authentic Tamil vegetarian catering for celebrations across Chennai.</p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Discover</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p style="font-size:0.95rem; opacity:0.9;">
+                    No. 24, 5th Main Road,<br>
+                    Nanganallur, Chennai &ndash; 600 061
+                </p>
+                <p style="font-size:0.95rem;">
+                    <a href="tel:+919841015297">98410 15297</a><br>
+                    <a href="mailto:mangalambigacatering@gmail.com">mangalambigacatering@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="premium-footer-bottom">
+            &copy; 2026 Sri Mangalambiga Catering Services. All Rights Reserved. &bull; ISO 9001:2015 CERTIFIED
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/919841015297" target="_blank" aria-label="Contact on WhatsApp"
+        style="position:fixed; right:24px; bottom:24px; z-index:999; border-radius:50%; width:56px; height:56px; background-color: var(--burnt-orange); color: var(--pure-white); font-size:24px; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        &#9742;
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-menu');
+            const btn = document.getElementById('menuBtn');
+            nav.classList.toggle('mobile-active');
+            btn.classList.toggle('active');
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('event').value;
+            const guests = document.getElementById('guests').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value || 'Not specified';
+            const message = document.getElementById('message').value || 'None';
+
+            const formattedMessage = `*New Catering Enquiry*%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                `*Event Type:* ${encodeURIComponent(eventType)}%0A` +
+                `*Guests:* ${encodeURIComponent(guests)}%0A` +
+                `*Date:* ${encodeURIComponent(date)}%0A` +
+                `*Time:* ${encodeURIComponent(time)}%0A` +
+                `*Requirements:* ${encodeURIComponent(message)}`;
+
+            const whatsappURL = `https://wa.me/919841015297?text=${formattedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Sri Mangalambiga Catering Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-maroon: #8C1428;
+            --burnt-orange: #E66A0A;
+            --leaf-green: #476B35;
+            --warm-ivory: #FFF7E8;
+            --bg-dark-maroon: #230207;
+            
+            --text-heading: #8C1428;
+            --text-body: #2B1810;
+
+            --border-light: rgba(140, 20, 40, 0.12);
+            --card-shadow: 0 10px 30px rgba(140, 20, 40, 0.05);
+
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body.inner-page {
+            background-color: var(--warm-ivory);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER NAVBAR */
+        header.navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #230207;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .navbar .logo img {
+            height: 46px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .navbar .logo-text strong {
+            display: block;
+            color: #FFFFFF;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar .logo-text span {
+            color: var(--burnt-orange);
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            font-family: var(--font-body);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: #FFFFFF !important;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: opacity 0.2s ease;
+            padding: 6px 0;
+            font-family: var(--font-body);
+        }
+
+        .nav-links li a.active {
+            color: var(--burnt-orange) !important;
+            border-bottom: 2px solid var(--burnt-orange);
+        }
+
+        .nav-button {
+            background: var(--burnt-orange);
+            color: #ffffff !important;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.8px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: var(--font-body);
+            border: 1px solid var(--burnt-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        /* HERO BANNER - LEFT ALIGNED WITH RINGS */
+        .page-hero {
+            background: linear-gradient(100deg, #1f0105 0%, #3a030b 35%, #7a1b0c 70%, #d4510c 100%);
+            padding: 80px 8% 75px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-circles {
+            position: absolute;
+            right: -120px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            pointer-events: none;
+        }
+
+        .circle-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-ring.r1 {
+            width: 580px;
+            height: 580px;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .circle-ring.r2 {
+            width: 440px;
+            height: 440px;
+            border-color: rgba(255, 255, 255, 0.12);
+            background: radial-gradient(circle, rgba(230, 106, 10, 0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .circle-ring.r3 {
+            width: 300px;
+            height: 300px;
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .hero-text-wrapper {
+            max-width: 680px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero-label {
+            color: #fca369;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 12px;
+            font-family: var(--font-body);
+        }
+
+        .page-hero h1 {
+            color: #FFFFFF;
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0 0 16px;
+            font-weight: 700;
+        }
+
+        .page-hero h1 span {
+            color: #FF7B1C;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .orange-line {
+            width: 40px;
+            height: 3px;
+            background: #FF7B1C;
+            margin: 0 0 20px 0;
+            border-radius: 2px;
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 580px;
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 400;
+            font-family: var(--font-body);
+        }
+
+        /* CATEGORY FILTER TABS */
+        .category-nav-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 40px auto 30px;
+            max-width: 1150px;
+            padding: 0 6%;
+        }
+
+        .cat-tab-btn {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border-light);
+            color: var(--deep-maroon);
+            padding: 12px 24px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            font-family: var(--font-body);
+        }
+
+        .cat-tab-btn:hover {
+            border-color: var(--leaf-green);
+            color: var(--leaf-green);
+            transform: translateY(-2px);
+        }
+
+        .cat-tab-btn.active-tab {
+            background: var(--deep-maroon);
+            color: #FFFFFF;
+            border-color: var(--deep-maroon);
+            box-shadow: 0 4px 15px rgba(140, 20, 40, 0.2);
+        }
+
+        /* SERVICES CONTENT AREA */
+        .services-list-container {
+            max-width: 1150px;
+            margin: 0 auto 50px;
+            padding: 0 6%;
+        }
+
+        .service-card {
+            display: none;
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 40px 35px;
+            box-shadow: var(--card-shadow);
+            box-sizing: border-box;
+        }
+
+        .service-card.active-content {
+            display: block;
+        }
+
+        .content-header {
+            border-bottom: 2px solid var(--warm-ivory);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .content-header h3 {
+            color: var(--deep-maroon);
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+            text-align: left;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 18px;
+        }
+
+        .service-item-card {
+            background: var(--warm-ivory);
+            border: 1.5px solid rgba(140, 20, 40, 0.12);
+            padding: 18px 22px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-height: 70px;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .service-item-card:hover {
+            border-color: var(--leaf-green) !important;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(71, 107, 53, 0.2);
+            background: #FFFFFF;
+        }
+
+        .item-bullet {
+            color: var(--burnt-orange);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 20px;
+        }
+
+        .item-text {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: left;
+            font-family: var(--font-body);
+        }
+
+        /* ADDITIONAL CONTENT SECTION ABOVE CTA */
+        .service-process-section {
+            max-width: 1150px;
+            margin: 0 auto 70px;
+            padding: 0 6%;
+        }
+
+        .process-title {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .process-title span {
+            color: var(--leaf-green);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .process-title h2 {
+            color: var(--deep-maroon);
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: var(--card-shadow);
+            text-align: left;
+        }
+
+        .process-step {
+            color: var(--burnt-orange);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .process-card h4 {
+            color: var(--deep-maroon);
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            font-family: var(--font-heading);
+        }
+
+        .process-card p {
+            color: var(--text-body);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin: 0;
+            font-family: var(--font-body);
+        }
+
+        /* CTA BANNER (MATCHING SCREENSHOT) */
+        .cta-banner {
+            background: linear-gradient(100deg, #1f0105 0%, #3a030b 35%, #7a1b0c 70%, #d4510c 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--burnt-orange);
+        }
+
+        .cta-banner h2 {
+            color: #FFFFFF;
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            margin: 0 0 15px;
+            font-weight: 400;
+        }
+
+        .cta-banner h2 span {
+            color: #FF7B1C;
+            font-style: italic;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+            font-family: var(--font-body);
+        }
+
+        .cta-btn {
+            background: var(--burnt-orange);
+            color: #FFFFFF;
+            border: none;
+            padding: 14px 32px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 106, 10, 0.3);
+            font-family: var(--font-body);
+        }
+
+        .cta-btn:hover {
+            background: #c55700;
+            transform: translateY(-2px);
+        }
+
+        /* MAIN FOOTER (MATCHING SCREENSHOT) */
+        .site-footer {
+            background: #8C1428;
+            color: #FFFFFF;
+            padding: 60px 6% 40px;
+            font-family: var(--font-body);
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin: 0 0 20px 0;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #FF7B1C;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.88rem;
+        }
+
+        .contact-info .phone {
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-top: 12px;
+            display: block;
+        }
+
+        .contact-info .email {
+            color: rgba(255, 255, 255, 0.85);
+            word-break: break-all;
+            display: block;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .page-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .category-nav-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cat-tab-btn {
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-circles {
+                opacity: 0.3;
+                right: -200px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-banner h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="mcs-logo.jpeg" alt="Sri Mangalambiga">
+            <div class="logo-text">
+                <strong>SRI MANGALAMBIGA</strong>
+                <span>CATERING SERVICES</span>
+            </div>
+        </a>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="why-us.html">WHY US</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-button">BOOK AN EVENT</a>
+    </header>
+
+    <section class="page-hero">
+        <div class="hero-circles">
+            <div class="circle-ring r1"></div>
+            <div class="circle-ring r2"></div>
+            <div class="circle-ring r3"></div>
+        </div>
+
+        <div class="hero-text-wrapper">
+            <span class="page-hero-label">SRI MANGALAMBIGA</span>
+            <h1>Our <span>Services</span></h1>
+            <div class="orange-line"></div>
+            <p>
+                Traditional Tamil flavours, thoughtful presentation and warm hospitality — created for celebrations that deserve to be remembered.
+            </p>
+        </div>
+    </section>
+
+    <div class="category-nav-wrapper">
+        <button class="cat-tab-btn active-tab" onclick="switchCategory('wedding-essentials', event)">WEDDING ESSENTIALS</button>
+        <button class="cat-tab-btn" onclick="switchCategory('decor-stage', event)">DECOR & STAGE</button>
+        <button class="cat-tab-btn" onclick="switchCategory('music-entertainment', event)">MUSIC & ENTERTAINMENT</button>
+        <button class="cat-tab-btn" onclick="switchCategory('stalls-counters', event)">STALLS & COUNTERS</button>
+        <button class="cat-tab-btn" onclick="switchCategory('special-experience', event)">SPECIAL EXPERIENCE</button>
+    </div>
+
+    <section class="services-list-container">
+
+        <div id="wedding-essentials" class="service-card active-content">
+            <div class="content-header">
+                <h3>Wedding Essentials</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">மங்கள வாத்தியம் (2 செட்)</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">புஷ்பம் & வாழை மரம்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">சாஸ்திரிகள் & அங்குமணி சாமான்கள்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">காசியாயாத்திரை சாமான்கள்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">மாப்பிள்ளை மங்கள ஸ்நானம்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">ஆர்த்தி பச்சைப்புடி ஏற்பாடுகள்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">சீர் பட்சணங்கள் & நிச்சயதார்த்த சீர் தட்டுகள் (7/9/11/21)</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">High Quality டிபன் & முகூர்த்த சாப்பாடு</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Grand Reception Dinner & Buffet Arrangement</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">கட்டுசாத கூடை பேக்கிங் (50 / 75 / 100)</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Uniform Service & செக்யூரிட்டி & Valet Parking</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">கும்பகோணம் வெற்றிலை பாக்கு & Special முகூர்த்த பை</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Seer Batchnangal (Container)</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">பட்டுப்பாய் - 2 & பச்சைபிடி பாத்திரங்கள்</span></div>
+            </div>
+        </div>
+
+        <div id="decor-stage" class="service-card">
+            <div class="content-header">
+                <h3>Decor & Stage</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Stage Decoration, Drums & Extra Items</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">கோலம் அரேஞ்ச்மென்ட்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">வெல்கம் செட்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">டைனிங் டேபிள் டெக்கரேஷன்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">ஊஞ்சல் & Bed Decoration</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">ஆர்த்தி Plate Decoration</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Wedding Kolu</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">காசியாயாத்திரை Floor Decoration</span></div>
+            </div>
+        </div>
+
+        <div id="music-entertainment" class="service-card">
+            <div class="content-header">
+                <h3>Music & Entertainment</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Light Music / DJ / Karnatic Music</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">செண்டை மேளம்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Drums & Crackers / முகூர்த்த Shot</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">ஊஞ்சல் பாட்டு</span></div>
+            </div>
+        </div>
+
+        <div id="stalls-counters" class="service-card">
+            <div class="content-header">
+                <h3>Stalls & Counters</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">குடந்தை டிகிரி காபி Stall & ஜூஸ் கவுண்டர்</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Ice Cream & Beeda Counter</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Fresh Juice & Fresh Cut Fruits</span></div>
+            </div>
+        </div>
+
+        <div id="special-experience" class="service-card">
+            <div class="content-header">
+                <h3>Special Experience</h3>
+            </div>
+            <div class="services-grid">
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Photo & Video (Live Photo & Live Art)</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">ஜானவாச கார் / Charriot / குதிரை</span></div>
+                <div class="service-item-card"><span class="item-bullet">✦</span><span class="item-text">Bridal / Groom Makeup</span></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="service-process-section">
+        <div class="process-title">
+            <span>HOW WE WORK</span>
+            <h2>Seamless Event Execution</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-card">
+                <span class="process-step">01</span>
+                <h4>Consultation & Planning</h4>
+                <p>We discuss your menu preferences, guest count, and event requirements to craft a tailored experience.</p>
+            </div>
+            <div class="process-card">
+                <span class="process-step">02</span>
+                <h4>Fresh Sourcing</h4>
+                <p>All ingredients are handpicked daily to ensure maximum quality and traditional authenticity.</p>
+            </div>
+            <div class="process-card">
+                <span class="process-step">03</span>
+                <h4>Gracious Hospitality</h4>
+                <p>Our uniformed team manages setup, serving, and guest care with complete dedication.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Sri Mangalambiga</h3>
+                <p>Traditional Tamil flavours, generous hospitality and memorable vegetarian feasts for every celebration.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Discover</h3>
+                <ul class="footer-links">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="why-us.html">Why Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h3>Contact</h3>
+                <p>No. 24, 5th Main Road,<br>Nanganallur, Chennai – 600 061</p>
+                <span class="phone">98410 15297</span>
+                <span class="email">mangalambigacatering@gmail.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchCategory(categoryId, event) {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => card.classList.remove('active-content'));
+
+            const tabs = document.querySelectorAll('.cat-tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+            document.getElementById(categoryId).classList.add('active-content');
+            event.currentTarget.classList.add('active-tab');
+        }
+
+        function toggleMobileMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('mobile-active');
+        }
+    </script>
+
+</body>
+
+</html>

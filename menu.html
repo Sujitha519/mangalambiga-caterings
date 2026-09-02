@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Mangalambiga Catering Services</title>
+
+  <!-- Google Fonts for Classic Heritage Serif & Modern Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Brand Color Variables */
+    :root {
+      --deep-maroon: #8C1428;
+      --burnt-orange: #E66A0A;
+      --leaf-green: #476B35;
+      --warm-ivory: #FFF7E8;
+      --dark-text: #2B1810;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--warm-ivory);
+      color: var(--dark-text);
+      overflow-x: hidden;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      background-color: var(--warm-ivory);
+      border-bottom: 2px solid rgba(140, 20, 40, 0.1);
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--deep-maroon);
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--leaf-green);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark-text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--burnt-orange);
+    }
+
+    .order-btn {
+      background-color: var(--leaf-green);
+      color: var(--warm-ivory);
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .order-btn:hover {
+      background-color: #385529;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8% 80px;
+    }
+
+    .hero-content {
+      max-width: 520px;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--burnt-orange);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 46px;
+      line-height: 1.2;
+      color: var(--deep-maroon);
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      color: #5c4338;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    /* Action Trigger Button to open 3D Flipbook */
+    .open-menu-trigger {
+      background-color: var(--deep-maroon);
+      color: var(--warm-ivory);
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(140, 20, 40, 0.3);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .open-menu-trigger:hover {
+      background-color: #6e0f1f;
+      transform: translateY(-2px);
+    }
+
+    .story-btn {
+      background-color: transparent;
+      border: 2px solid var(--burnt-orange);
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--burnt-orange);
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .story-btn:hover {
+      background-color: var(--burnt-orange);
+      color: var(--warm-ivory);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-img {
+      width: 460px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      border: 4px solid #fff;
+    }
+
+    /* Flipbook Modal Overlay */
+    .menu-modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(43, 24, 16, 0.94);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .menu-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-header {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 100%;
+      padding: 0 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--warm-ivory);
+    }
+
+    .modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: var(--warm-ivory);
+    }
+
+    .close-modal-btn {
+      background: rgba(255, 247, 232, 0.15);
+      border: 1px solid rgba(255, 247, 232, 0.3);
+      color: var(--warm-ivory);
+      padding: 8px 22px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .close-modal-btn:hover {
+      background: var(--burnt-orange);
+    }
+
+    /* 3D Flipbook Stage */
+    .book-stage {
+      width: 75vw;
+      max-width: 1000px;
+      height: 65vh;
+      max-height: 650px;
+      perspective: 2000px;
+    }
+
+    .book {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    .paper {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      transform-origin: left center;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      background-color: var(--warm-ivory);
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.15);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .front img, .back img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Modal Navigation Pill Controls */
+    .modal-controls {
+      position: absolute;
+      bottom: 30px;
+      background: var(--deep-maroon);
+      border: 1px solid var(--burnt-orange);
+      border-radius: 40px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .nav-pill-btn {
+      background: var(--burnt-orange);
+      border: none;
+      color: var(--warm-ivory);
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .nav-pill-btn:hover {
+      opacity: 0.9;
+    }
+
+    .page-num {
+      color: var(--warm-ivory);
+      font-size: 14px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Main Website Section -->
+  <header class="navbar">
+    <div class="logo">
+      Sri Mangalambiga
+      <span class="logo-sub">Catering Services</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Menu Catalog</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="order-btn">Book Catering</button>
+  </header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <div class="hero-tagline">Authentic & Traditional Flavors</div>
+      <h1 class="hero-title">A Symphony of Pure Taste & Tradition</h1>
+      <p class="hero-subtitle">Bringing traditional culinary excellence and memorable feast experiences to all your special occasions and grand celebrations.</p>
+      
+      <div class="hero-buttons">
+        <!-- Trigger button to launch 3D Flipbook -->
+        <button id="open-menu-btn" class="open-menu-trigger">
+          📖 View Full Menu
+        </button>
+        <button class="story-btn">Our Heritage</button>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap">
+      <img src="pages/page1.avif" alt="Featured Catering Dish" class="hero-img">
+    </div>
+  </main>
+
+  <!-- 2. Interactive 3D Menu Modal -->
+  <div id="menu-modal" class="menu-modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Sri Mangalambiga — Interactive Menu</h3>
+      <button id="close-menu-btn" class="close-modal-btn">&times; Close</button>
+    </div>
+
+    <div class="book-stage">
+      <div id="book" class="book">
+        
+        <!-- Sheet 1 -->
+        <div class="paper" style="z-index: 6;">
+          <div class="front"><img src="pages/page1.avif" alt="Page 1"></div>
+          <div class="back"><img src="pages/page2.avif" alt="Page 2"></div>
+        </div>
+
+        <!-- Sheet 2 -->
+        <div class="paper" style="z-index: 5;">
+          <div class="front"><img src="pages/page3.avif" alt="Page 3"></div>
+          <div class="back"><img src="pages/page4.avif" alt="Page 4"></div>
+        </div>
+
+        <!-- Sheet 3 -->
+        <div class="paper" style="z-index: 4;">
+          <div class="front"><img src="pages/page5.avif" alt="Page 5"></div>
+          <div class="back"><img src="pages/page6.avif" alt="Page 6"></div>
+        </div>
+
+        <!-- Sheet 4 -->
+        <div class="paper" style="z-index: 3;">
+          <div class="front"><img src="pages/page7.avif" alt="Page 7"></div>
+          <div class="back"><img src="pages/page8.avif" alt="Page 8"></div>
+        </div>
+
+        <!-- Sheet 5 -->
+        <div class="paper" style="z-index: 2;">
+          <div class="front"><img src="pages/page9.avif" alt="Page 9"></div>
+          <div class="back"><img src="pages/page10.avif" alt="Page 10"></div>
+        </div>
+
+        <!-- Sheet 6 -->
+        <div class="paper" style="z-index: 1;">
+          <div class="front"><img src="pages/page11.avif" alt="Page 11"></div>
+          <div class="back"><img src="pages/page12.avif" alt="Page 12"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-controls">
+      <button id="prev-btn" class="nav-pill-btn">Back</button>
+      <span id="page-counter" class="page-num">1 / 12</span>
+      <button id="next-btn" class="nav-pill-btn">Next</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const openBtn = document.getElementById('open-menu-btn');
+      const closeBtn = document.getElementById('close-menu-btn');
+      const modal = document.getElementById('menu-modal');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const pageCounter = document.getElementById('page-counter');
+      const papers = Array.from(document.querySelectorAll('.paper'));
+
+      let currentLocation = 1;
+      const numOfPapers = papers.length;
+      const maxLocation = numOfPapers + 1;
+
+      // Web Audio API Synthetic Page Flip Sound Effect
+      let audioCtx = null;
+
+      function playFlipSound() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+
+        const bufferSize = audioCtx.sampleRate * 0.12;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(1100, audioCtx.currentTime);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        noise.start();
+      }
+
+      function updatePageCounter() {
+        let pageNum = (currentLocation - 1) * 2;
+        if (pageNum === 0) pageNum = 1;
+        pageCounter.textContent = `${pageNum} / ${numOfPapers * 2}`;
+      }
+
+      function goNextPage() {
+        if (currentLocation < maxLocation) {
+          playFlipSound();
+          const paper = papers[currentLocation - 1];
+          paper.style.transform = "rotateY(-180deg)";
+          paper.style.zIndex = currentLocation;
+          currentLocation++;
+          updatePageCounter();
+        }
+      }
+
+      function goPrevPage() {
+        if (currentLocation > 1) {
+          playFlipSound();
+          currentLocation--;
+          const paper = papers[currentLocation - 1];
+          paper.style.transform = "rotateY(0deg)";
+          paper.style.zIndex = numOfPapers - currentLocation + 1;
+          updatePageCounter();
+        }
+      }
+
+      nextBtn.addEventListener('click', goNextPage);
+      prevBtn.addEventListener('click', goPrevPage);
+
+      // Modal Triggers
+      openBtn.addEventListener('click', () => modal.classList.add('active'));
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>
